@@ -1,0 +1,200 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "name": "Vans Classic T-shirt",
+      "categoryId": "1",
+      "sizeId": "1",
+      "color": "#000000",
+      "purchaseDate": "2024-04-10T00:00:00.000Z",
+      "image": "/images/item-01.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Basic Short Sleeve T-shirt",
+      "categoryId": "1",
+      "sizeId": "1",
+      "color": "#ff0000",
+      "purchaseDate": "2024-03-30T00:00:00.000Z",
+      "image": "/images/item-02.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Basic Short Sleeve T-shirt",
+      "categoryId": "1",
+      "sizeId": "1",
+      "color": "#808080",
+      "purchaseDate": "2024-03-30T00:00:00.000Z",
+      "image": "/images/item-03.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Joy Division Unknown Pleasures Album T-shirt",
+      "categoryId": "1",
+      "sizeId": "4",
+      "color": "#808080",
+      "purchaseDate": "2024-02-01T00:00:00.000Z",
+      "image": "/images/item-04.jpg"
+    },
+    {
+      "id": "5",
+      "name": "Basic Coloured Hoodie",
+      "categoryId": "1",
+      "sizeId": "2",
+      "color": "#FFD700",
+      "purchaseDate": "2024-04-10T00:00:00.000Z",
+      "image": "/images/item-05.jpg"
+    },
+    {
+      "id": "6",
+      "name": "Basic Coloured Hoodie",
+      "categoryId": "1",
+      "sizeId": "2",
+      "color": "#808000",
+      "image": "/images/item-06.jpg",
+      "purchaseDate": "2024-04-20T00:00:00.000Z"
+    },
+    {
+      "id": "7",
+      "name": "Basic Raincoat",
+      "categoryId": "2",
+      "sizeId": "3",
+      "color": "#000000",
+      "purchaseDate": "2024-01-05T00:00:00.000Z",
+      "image": "/images/item-07.jpg"
+    },
+    {
+      "id": "8",
+      "name": "Levi's Denim Jacket",
+      "categoryId": "2",
+      "sizeId": "2",
+      "color": "#000000",
+      "purchaseDate": "2022-10-10T00:00:00.000Z",
+      "image": "/images/item-08.jpg"
+    },
+    {
+      "id": "9",
+      "name": "Levi's Skinny Jeans",
+      "categoryId": "3",
+      "sizeId": "2",
+      "color": "#000000",
+      "purchaseDate": "2022-12-25T00:00:00.000Z",
+      "image": "/images/item-09.jpg"
+    },
+    {
+      "id": "10",
+      "name": "Levi's Mid Length Shorts",
+      "categoryId": "3",
+      "sizeId": "2",
+      "color": "#000000",
+      "purchaseDate": "2023-07-20T00:00:00.000Z",
+      "image": "/images/item-10.jpg"
+    },
+    {
+      "id": "11",
+      "name": "Levi's Mid Length Shorts",
+      "categoryId": "3",
+      "sizeId": "2",
+      "color": "#ADD8E6",
+      "purchaseDate": "2023-06-30T00:00:00.000Z",
+      "image": "/images/item-11.jpg"
+    },
+    {
+      "id": "12",
+      "name": "Vans Old Skool Shoes",
+      "categoryId": "4",
+      "sizeId": "6",
+      "color": "#000000",
+      "image": "/images/item-12.jpg",
+      "purchaseDate": "2022-05-04T22:00:00.000Z"
+    },
+    {
+      "id": "13",
+      "name": "Adidas Samba OG Shoes",
+      "categoryId": "4",
+      "sizeId": "5",
+      "color": "#000000",
+      "purchaseDate": "2023-09-25T00:00:00.000Z",
+      "image": "/images/item-13.jpg"
+    },
+    {
+      "id": "14",
+      "name": "Puma Suede Classic Shoes",
+      "categoryId": "4",
+      "sizeId": "5",
+      "color": "#FF0000",
+      "purchaseDate": "2023-04-20T00:00:00.000Z",
+      "image": "/images/item-14.jpg"
+    },
+    {
+      "id": "15",
+      "name": "Herschel Supply Co. Classic Backpack",
+      "categoryId": "5",
+      "sizeId": "7",
+      "color": "#000000",
+      "purchaseDate": "2023-08-30T00:00:00.000Z",
+      "image": "/images/item-15.jpg"
+    },
+    {
+      "id": "16",
+      "name": "Lumer  \"Samo laganini\" Backpack",
+      "categoryId": "5",
+      "sizeId": "7",
+      "color": "#000000",
+      "image": "/images/item-16.jpg",
+      "purchaseDate": "2024-02-20T00:00:00.000Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Shirts"
+    },
+    {
+      "id": "2",
+      "name": "Jackets"
+    },
+    {
+      "id": "3",
+      "name": "Pants"
+    },
+    {
+      "id": "4",
+      "name": "Shoes"
+    },
+    {
+      "id": "5",
+      "name": "Accessories"
+    }
+  ],
+  "sizes": [
+    {
+      "id": "1",
+      "name": "S"
+    },
+    {
+      "id": "2",
+      "name": "M"
+    },
+    {
+      "id": "3",
+      "name": "L"
+    },
+    {
+      "id": "4",
+      "name": "XL"
+    },
+    {
+      "id": "5",
+      "name": "38"
+    },
+    {
+      "id": "6",
+      "name": "38.5"
+    },
+    {
+      "id": "7",
+      "name": "OS"
+    }
+  ]
+}
