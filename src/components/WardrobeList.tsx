@@ -16,7 +16,7 @@ const WardrobeList = ({
   items: Item[];
   categories: Category[];
   sizes: Size[];
-  refresh: React.Dispatch<React.SetStateAction<never[]>>;
+  refresh: React.Dispatch<React.SetStateAction<Item[]>>;
 }) => {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedSize, setSelectedSize] = useState('');
@@ -45,7 +45,9 @@ const WardrobeList = ({
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        let url = `http://localhost:3001/items?categoryId=${selectedCategory}&sizeId=${selectedSize}`;
+        let url = `https://my-json-server.typicode.com/anamarijapapic/JUNIORDev-React-05-MyWardrobe--server/items?`;
+        url += selectedCategory ? `&categoryId=${selectedCategory}` : '';
+        url += selectedSize ? `&sizeId=${selectedSize}` : '';
         url += sortByDateDesc ? '&_sort=-purchaseDate' : '&_sort=purchaseDate';
         const res = await axios.get(url);
         refresh(res.data);
@@ -60,26 +62,30 @@ const WardrobeList = ({
 
   const handleEdit = async (item: Item) => {
     try {
-      await axios.put(`http://localhost:3001/items/${item.id}`, item);
-      const res = await axios.get(
-        'http://localhost:3001/items?_sort=-purchaseDate'
+      const res = await axios.put(
+        `https://my-json-server.typicode.com/anamarijapapic/JUNIORDev-React-05-MyWardrobe--server/items/${item.id}`,
+        item
       );
-      refresh(res.data);
-      resetFilters();
-      setOpenEditModal(false);
+      refresh((prevItems) => {
+        const index = prevItems.findIndex((i) => i.id === item.id);
+        const newItems = [...prevItems];
+        newItems[index] = res.data;
+        return newItems;
+      });
     } catch (error) {
       console.error(error);
-      alert('An error occurred while updating the item.');
+      alert('An error occurred while editing the item.');
     }
+    resetFilters();
+    setOpenEditModal(false);
   };
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:3001/items/${deleteId}`);
-      let url = `http://localhost:3001/items?categoryId=${selectedCategory}&sizeId=${selectedSize}`;
-      url += sortByDateDesc ? '&_sort=-purchaseDate' : '&_sort=purchaseDate';
-      const res = await axios.get(url);
-      refresh(res.data);
+      await axios.delete(
+        `https://my-json-server.typicode.com/anamarijapapic/JUNIORDev-React-05-MyWardrobe--server/items/${deleteId}`
+      );
+      refresh((prevItems) => prevItems.filter((i) => i.id !== deleteId));
       setOpenDeleteModal(false);
       setDeleteId('');
     } catch (error) {

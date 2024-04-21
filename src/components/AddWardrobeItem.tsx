@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Card } from 'flowbite-react';
 import { Category, Size } from '../types';
 import InputForm from './InputForm';
+import { Item } from '../types';
 
 const AddWardrobeItem = ({
   categories,
@@ -11,7 +12,7 @@ const AddWardrobeItem = ({
 }: {
   categories: Category[];
   sizes: Size[];
-  refresh: React.Dispatch<React.SetStateAction<never[]>>;
+  refresh: React.Dispatch<React.SetStateAction<Item[]>>;
 }) => {
   const [name, setName] = useState('');
   const [categoryId, setCategoryId] = useState('');
@@ -47,11 +48,11 @@ const AddWardrobeItem = ({
     purchaseDate: Date;
   }) => {
     try {
-      await axios.post(`http://localhost:3001/items`, item);
-      const res = await axios.get(
-        `http://localhost:3001/items?_sort=-purchaseDate`
+      const res = await axios.post(
+        `https://my-json-server.typicode.com/anamarijapapic/JUNIORDev-React-05-MyWardrobe--server/items`,
+        item
       );
-      refresh(res.data);
+      refresh((prevItems) => [...prevItems, res.data]);
       resetForm();
     } catch (error) {
       console.error(error);

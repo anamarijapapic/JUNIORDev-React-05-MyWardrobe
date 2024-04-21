@@ -3,6 +3,7 @@ import { DarkThemeToggle } from 'flowbite-react';
 import axios from 'axios';
 import WardrobeList from './components/WardrobeList';
 import AddWardrobeItem from './components/AddWardrobeItem';
+import { Item } from './types';
 
 function App() {
   const [items, setItems] = useState([]);
@@ -11,8 +12,12 @@ function App() {
 
   useEffect(() => {
     Promise.all([
-      axios.get('http://localhost:3001/categories'),
-      axios.get('http://localhost:3001/sizes'),
+      axios.get(
+        'https://my-json-server.typicode.com/anamarijapapic/JUNIORDev-React-05-MyWardrobe--server/categories'
+      ),
+      axios.get(
+        'https://my-json-server.typicode.com/anamarijapapic/JUNIORDev-React-05-MyWardrobe--server/sizes'
+      ),
     ]).then((all) => {
       setCategories(all[0].data);
       setSizes(all[1].data);
@@ -36,7 +41,7 @@ function App() {
             <AddWardrobeItem
               categories={categories}
               sizes={sizes}
-              refresh={setItems}
+              refresh={setItems as React.Dispatch<React.SetStateAction<Item[]>>}
             />
           </div>
           <div className="md:col-span-2">
@@ -44,7 +49,7 @@ function App() {
               items={items}
               categories={categories}
               sizes={sizes}
-              refresh={setItems}
+              refresh={setItems as React.Dispatch<React.SetStateAction<Item[]>>}
             />
           </div>
         </div>
