@@ -1,30 +1,25 @@
-# React + TypeScript + Vite
+### Digitalna Dalmacija JUNIORDev React 2024
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Praktični rad 5
 
-Currently, two official plugins are available:
+## Zadatak
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Napravite vlastiti primjer aplikacije koja koristi CRUD elemente. Ideju aplikacije možete prilagoditi vlastitim željama.
 
-## Expanding the ESLint configuration
+## Opis aplikacije
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Aplikacija služi za evidenciju vlastite garderobe. Na sučelju postoji dio za unos novih komada odjeće, pri čemu se unose svi relevantni podaci. Na drugom dijelu aplikacije su vidljivi svi trenutno uneseni komadi, te ih je moguće uređivati ili brisati.
 
-- Configure the top-level `parserOptions` property like this:
+Za potrebe izrade aplikacije napravite vlastite modele podataka i spremite ih u datoteku koju možete učitati pomoću "json-server" modula.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-};
-```
+### Funkcionalnosti aplikacije
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Dodavanje novih elemenata - pokušajte iskoristiti različite input elemente kako bi se upoznali sa njihovim radom. Možete li dodati colorpicker element za odabir boje ili polje za odabir datuma (npr. datum kupnje)
+- Prikaz svih trenutnih elemenata - u tablici za prikaz prikažite sve podatke o spremljenim komadima odjeće. Ukoliko ste za svaki objekt dodali veću količinu podataka, možete nadograditi aplikaciju na način da u stupcu "opcije" dodate i tipku "Detalji" koja će proširiti samo taj odabrani redak tablice i prikazati detalje o tom objektu (uvjetno renderiranje).
+- Uređivanje i brisanje elemenata - dodajte mogućnost uređivanja dijela ili svih podataka o nekom komadu odjeće, te mogućnost brisanja. Prije brisanja bi bilo poželjno upitati korisnika je li siguran u svoj odabir.
+- Filtriranje prikaza - dodajte mogućnost filtriranja prikaza prema nekoj karakteristici, npr. prikaz samo elemenata po nekoj veličini ili vrsti odjeće. (S obzirom da poslužitelj vraća sve podatke, filtriranje radite unutar komponente - možete imati jedno stanje sa svim podacima, a drugo sa podacima za prikaz koje se mijenja ovisno o odabranoj opciji)
+- Prikaz slike - poslužitelj koji koristimo u primjeru nema opciju spremanja datoteka ali slike možete prikazati na prilikom unosa novih elemenata spremite putanju do slike. Putanja može biti na neki eksterni link ili možete "ručno" spremiti slike u direktorij "public" u svom projektu i navoditi relativne putanje do tih slika.
+
+### Vizualni primjer rješenja
+
+![Primjer rješenja](https://github.com/anamarijapapic/JUNIORDev-React-05-MyWardrobe/assets/92815435/1ff3eca1-fa05-49af-a8e9-ff7321897321)
