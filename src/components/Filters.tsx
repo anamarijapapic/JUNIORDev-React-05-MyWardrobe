@@ -19,7 +19,7 @@ const Filters: React.FC<FiltersProps> = ({
   setSelectedSize,
   sizes,
 }) => (
-  <div className="grid grid-cols-6 gap-4 mb-3 text-left">
+  <div className="grid grid-cols-6 gap-4 mb-3 text-left items-end">
     <div className="col-start-3 col-span-2">
       <div className="mb-2 block">
         <Label htmlFor="categories" value="Select category" />
